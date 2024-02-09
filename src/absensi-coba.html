@@ -1,24 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="antialiased">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta http-equiv="x-ua-compatible" content="ie=edge" />
-    <meta name="referrer" content="always" />
-    <link rel="stylesheet" href="./output.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    <!-- font google -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <title>DataTables</title>
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>halo</title>
+    <link href="https://unpkg.com/tailwindcss@2.2.19/dist/tailwind.min.css" rel=" stylesheet" />
+    <!--Replace with your tailwind.css once created-->
+
+    <!--Regular Datatables CSS-->
+    <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <!--Responsive Extension Datatables CSS-->
+    <link href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css" rel="stylesheet" />
+
+    <style>
+      /*Overrides for Tailwind CSS */
+
+      /*Form fields*/
+      .dataTables_wrapper select,
+      .dataTables_wrapper .dataTables_filter input {
+        color: #4a5568;
+        /*text-gray-700*/
+        padding-left: 1rem;
+        /*pl-4*/
+        padding-right: 1rem;
+        /*pl-4*/
+        padding-top: 0.5rem;
+        /*pl-2*/
+        padding-bottom: 0.5rem;
+        /*pl-2*/
+        line-height: 1.25;
+        /*leading-tight*/
+        border-width: 2px;
+        /*border-2*/
+        border-radius: 0.25rem;
+        border-color: #edf2f7;
+        /*border-gray-200*/
+        background-color: #edf2f7;
+        /*bg-gray-200*/
+      }
+
+      /*Row Hover*/
+      table.dataTable.hover tbody tr:hover,
+      table.dataTable.display tbody tr:hover {
+        background-color: #ebf4ff;
+        /*bg-indigo-100*/
+      }
+
+      /*Pagination Buttons*/
+      .dataTables_wrapper .dataTables_paginate .paginate_button {
+        font-weight: 700;
+        /*font-bold*/
+        border-radius: 0.25rem;
+        /*rounded*/
+        border: 1px solid transparent;
+        /*border border-transparent*/
+      }
+
+      /*Pagination Buttons - Current selected */
+      .dataTables_wrapper .dataTables_paginate .paginate_button.current {
+        color: #fff !important;
+        /*text-white*/
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        /*shadow*/
+        font-weight: 700;
+        /*font-bold*/
+        border-radius: 0.25rem;
+        /*rounded*/
+        background: #667eea !important;
+        /*bg-indigo-500*/
+        border: 1px solid transparent;
+        /*border border-transparent*/
+      }
+
+      /*Pagination Buttons - Hover */
+      .dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+        color: #fff !important;
+        /*text-white*/
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        /*shadow*/
+        font-weight: 700;
+        /*font-bold*/
+        border-radius: 0.25rem;
+        /*rounded*/
+        background: #667eea !important;
+        /*bg-indigo-500*/
+        border: 1px solid transparent;
+        /*border border-transparent*/
+      }
+
+      /*Add padding to bottom border */
+      table.dataTable.no-footer {
+        border-bottom: 1px solid #e2e8f0;
+        /*border-b-1 border-gray-300*/
+        margin-top: 0.75em;
+        margin-bottom: 0.75em;
+      }
+
+      /*Change colour of responsive icon*/
+      table.dataTable.dtr-inline.collapsed > tbody > tr > td:first-child:before,
+      table.dataTable.dtr-inline.collapsed > tbody > tr > th:first-child:before {
+        background-color: #667eea !important;
+        /*bg-indigo-500*/
+      }
+    </style>
   </head>
-  <body class="font-inter">
-    <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
+<div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
       <div x-cloak :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
 
       <div x-cloak :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#1061CC] lg:translate-x-0 lg:static lg:inset-0">
@@ -28,7 +119,7 @@
           </div>
         </div>
         <div class="flex flex-col text-white justify-center gap-2 py-5 border-b border-white">
-          <h1 class="text-2xl font-bold text-center leading-[22px] font-inter">MANAGEMENT KARYAWAN</h1>
+          <h1 class="text-2xl font-bold text-center leading-[22px]">MANAGEMENT KARYAWAN</h1>
           <h2 class="text-lg font-normal text-center">
             PT. PERSADA DATA<br />
             MULTIMEDIA
@@ -208,108 +299,118 @@
             </div> -->
         </header>
 
-        <main class="flex-1 overflow-x-hidden overflow-y-auto p-10 bg-gray-200">
-          <h2 class="flex bg-gradient-to-r from-blue-500 to-currentcolor-500 p-2 rounded-lg font-inter font-bold text-white text-lg">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mx-2 mt-1" viewBox="0 0 640 512">
-              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-              <path
-                fill="#ffffff"
-                d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM625 177L497 305c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L591 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
-              /></svg
-            >Absensi
-          </h2>
-          <div class="flex justify-between">
-            <button class="flex bg-[#69B360] bg-opacity-60 px-2 py-3 mt-5 rounded-md text-sm font-bold text-white">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 me-2" viewBox="0 0 448 512">
-                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                <path
-                  fill="#ffffff"
-                  d="M0 80C0 53.5 21.5 32 48 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80zM64 96v64h64V96H64zM0 336c0-26.5 21.5-48 48-48h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V336zm64 16v64h64V352H64zM304 32h96c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48H304c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48zm80 64H320v64h64V96zM256 304c0-8.8 7.2-16 16-16h64c8.8 0 16 7.2 16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s7.2-16 16-16s16 7.2 16 16v96c0 8.8-7.2 16-16 16H368c-8.8 0-16-7.2-16-16s-7.2-16-16-16s-16 7.2-16 16v64c0 8.8-7.2 16-16 16H272c-8.8 0-16-7.2-16-16V304zM368 480a16 16 0 1 1 0-32 16 16 0 1 1 0 32zm64 0a16 16 0 1 1 0-32 16 16 0 1 1 0 32z"
-                /></svg
-              >Scan Absensi
-            </button>
-            <div class="flex gap-x-5">
-              <button class="flex bg-[#1061CC] px-5 py-3 mt-5 rounded-md text-sm font-bold text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-4 me-2" viewBox="0 0 512 512">
-                  <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                  <path
-                    fill="#ffffff"
-                    d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152V424c0 48.6 39.4 88 88 88H360c48.6 0 88-39.4 88-88V312c0-13.3-10.7-24-24-24s-24 10.7-24 24V424c0 22.1-17.9 40-40 40H88c-22.1 0-40-17.9-40-40V152c0-22.1 17.9-40 40-40H200c13.3 0 24-10.7 24-24s-10.7-24-24-24H88z"
-                  />
-                </svg>
-                Edit
-              </button>
-              <button class="flex bg-[#FF0000] bg-opacity-50 px-5 py-3 mt-5 rounded-md text-sm font-bold text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-4 me-2" viewBox="0 0 448 512">
-                  <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                  <path
-                    fill="#ffffff"
-                    d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"
-                  />
-                </svg>
-                Hapus
-              </button>
-            </div>
-          </div>
+  <main class="text-gray-900 tracking-wider bg-gray-200 h-full">
+    <!--Container-->
+    <div class="container w-full md:w-4/5 xl:w-3/5 mx-auto px-2">
+      <!--Title-->
+      <h1 class="flex items-center font-sans font-bold break-normal text-indigo-500 w-90px h-90px text-xl md:text-2xl">Responsive <a class="underline mx-2" href="https://datatables.net/">DataTables.net</a> Table</h1>
 
-          <div class="flex flex-col">
-            <div class="overflow-x-auto sm:mx-0.5 lg:mx-0.5">
-              <div class="py-2 inline-block min-w-full sm:px-6 lg :px-8">
-                <div class="overflow-hidden">
-                  <table class="min-w-full">
-                    <thead class="flex flex-col bg-gray-200 border-b">
-                      <tr class="flex justify-between text-base font-bold text-blue-900">
-                        <th scope="col" class="px-16 py-4">Nama</th>
-                        <th scope="col" class="px-10 py-4">Pukul</th>
-                        <th scope="col" class="px-10 py-4">Tanggal</th>
-                        <th scope="col" class="px-6 py-4">Jabatan</th>
-                        <th scope="col" class="px-6 py-4">Username</th>
-                      </tr>
-                    </thead>
-                    <tbody class="flex flex-col w-full gap-y-5">
-                      <tr class="bg-black rounded-xl flex justify-between transition duration-300 ease-in-out hover:bg-gray-100">
-                        <td class="py-4 whitespace-nowrap text-sm font-medium text-gray-900">1.Dimas Bayu Setiawan</td>
-                        <td class="text-sm text-gray-900 font-light py-4 whitespace-nowrap">Mfsafdgsfdgdfg</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Otto</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">@mdo</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">@sayyidinaakbar@gmail.com</td>
-                      </tr>
-                      <tr class="bg-white rounded-xl flex justify-between border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">2</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Jacob</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Thornton</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">@fat</td>
-                      </tr>
-                      <tr class="bg-white rounded-xl flex justify-between border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">3</td>
-                        <td colspan="2" class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Larry</td>
-                        <td colspan="2" class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Larry</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">@twitter</td>
-                      </tr>
-                      <tr class="bg-white flex rounded-xl justify-between border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">4</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Whitney</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Austin</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">@mdo</td>
-                      </tr>
-                      <tr class="bg-white flex rounded-xl justify-between border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">5</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Ted</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">Obama</td>
-                        <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">@fat</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-        </main>
-        <!--  -->
+      <!--Card-->
+      <div id="recipients" class="p-8 mt-9 lg:mt-0 w-full">
+        <table id="example" class="stripe hover gap-9" style="width: 100%; padding-top: 1em; padding-bottom: 1em w-full">
+          <thead>
+            <tr>
+              <th data-priority="1">Name</th>
+              <th data-priority="2">Position</th>
+              <th data-priority="3">Office</th>
+              <th data-priority="4">Age</th>
+              <th data-priority="5">Start date</th>
+              <th data-priority="6">Salary</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tiger Nixon</td>
+              <td>System Architect</td>
+              <td>Edinburgh</td>
+              <td>61</td>
+              <td>2011/04/25</td>
+              <td>$320,800</td>
+            </tr>
+
+            <!-- Rest of your data (refer to https://datatables.net/examples/server_side/ for server side processing)-->
+
+            <tr>
+              <td>Akbar bagus setiawan</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+
+            <tr>
+              <td>Donna Snider</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+            <tr>
+              <td>Donna Snider</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+            <tr>
+              <td>Donna Snider</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+            <tr>
+              <td>Donna Snider</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+            <tr>
+              <td>Donna Snider</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+            <tr>
+              <td>Donna Snider</td>
+              <td>Customer Support</td>
+              <td>New York</td>
+              <td>27</td>
+              <td>2011/01/25</td>
+              <td>$112,000</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
+      <!--/Card-->
     </div>
-    <script src="./main.js"></script>
-    <!-- <script src="../node_modules/flowbite/dist/flowbite.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+  </main>
+    <!--/container-->
+
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+    <!--Datatables -->
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        var table = $("#example")
+          .DataTable({
+            responsive: true,
+          })
+          .columns.adjust()
+          .responsive.recalc();
+      });
+    </script>
   </body>
+
 </html>
