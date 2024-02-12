@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="referrer" content="always" />
+    <link rel="stylesheet" href="./output.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.6.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
+    <title>halo</title>
+    <style>
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
+      @import url(https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css);
+    </style>
+  </head>
+  <body class="font-inter">
+    <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
+      <div x-cloak :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false" class="fixed inset-0 z-20 transition-opacity bg-black opacity-50 lg:hidden"></div>
+
+      <div x-cloak :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'" class="fixed inset-y-0 left-0 z-30 w-64 overflow-y-auto transition duration-300 transform bg-[#1061CC] lg:translate-x-0 lg:static lg:inset-0">
+        <div class="flex items-center justify-center h-16 bg-white">
+          <div class="flex items-center">
+            <img class="w-16" src="./img/logo.png" alt="" />
+          </div>
+        </div>
+        <div class="flex flex-col text-white justify-center gap-2 py-5 border-b border-white">
+          <h1 class="text-2xl font-bold text-center leading-[22px] font-inter">MANAGEMENT KARYAWAN</h1>
+          <h2 class="text-lg font-normal text-center">
+            PT. PERSADA DATA<br />
+            MULTIMEDIA
+          </h2>
+          <p class="text-center text-sm font-semibold">admin01ptpdm@gmail.com</p>
+        </div>
+
+        <nav class="mt-1 mx-3 font-semibold">
+          <a class="flex items-center px-6 py-2 mt-3 text-white bg-gray-200 bg-opacity-25 rounded-md" href="/">
+            <!-- <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+            </svg> -->
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                fill="#ffffff"
+                d="M0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm320 96c0-26.9-16.5-49.9-40-59.3V88c0-13.3-10.7-24-24-24s-24 10.7-24 24V292.7c-23.5 9.5-40 32.5-40 59.3c0 35.3 28.7 64 64 64s64-28.7 64-64zM144 176a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm-16 80a32 32 0 1 0 -64 0 32 32 0 1 0 64 0zm288 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64zM400 144a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+              />
+            </svg>
+
+            <span class="mx-3">Dashboard</span>
+          </a>
+
+          <a class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md" href="/ui-elements">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+              <path
+                fill="#ffffff"
+                d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM625 177L497 305c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L591 143c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"
+              />
+            </svg>
+
+            <span class="mx-3">Absensi</span>
+          </a>
+
+          <a class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md" href="/tables">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+              <path
+                fill="#ffffff"
+                d="M64 0C28.7 0 0 28.7 0 64V352c0 35.3 28.7 64 64 64H240l-10.7 32H160c-17.7 0-32 14.3-32 32s14.3 32 32 32H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H346.7L336 416H512c35.3 0 64-28.7 64-64V64c0-35.3-28.7-64-64-64H64zM512 64V288H64V64H512z"
+              />
+            </svg>
+
+            <span class="mx-3">Monitoring Staff</span>
+          </a>
+
+          <a class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md" href="/forms">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                fill="#ffffff"
+                d="M152.1 38.2c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 113C-2.3 103.6-2.3 88.4 7 79s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zm0 160c9.9 8.9 10.7 24 1.8 33.9l-72 80c-4.4 4.9-10.6 7.8-17.2 7.9s-12.9-2.4-17.6-7L7 273c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l22.1 22.1 55.1-61.2c8.9-9.9 24-10.7 33.9-1.8zM224 96c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zm0 160c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H256c-17.7 0-32-14.3-32-32zM160 416c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-17.7 0-32-14.3-32-32zM48 368a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
+              />
+            </svg>
+
+            <span class="mx-3">Kelola Staff</span>
+          </a>
+
+          <a class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md" href="/forms">
+            <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+              <path
+                fill="#ffffff"
+                d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"
+              />
+            </svg>
+
+            <span class="mx-3">Komplain</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="flex-1 flex flex-col overflow-hidden">
+        <header class="flex items-center justify-between px-6 py-3 bg-white">
+          <div class="flex items-center">
+            <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <!-- </div> -->
+
+            <!-- <div class="relative mx-4 lg:mx-0">
+              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+                <svg class="w-5 h-5 text-gray-500" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 21L15 15M17 10C17 13.866 13.866 17 10 17C6.13401 17 3 13.866 3 10C3 6.13401 6.13401 3 10 3C13.866 3 17 6.13401 17 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </span>
+
+              <input class="w-32 pl-10 pr-4 rounded-md form-input sm:w-64 focus:border-indigo-600" type="text" placeholder="Search" />
+            </div> -->
+            <!-- </div> -->
+
+            <!-- <div class="flex items-center"> -->
+            <!-- <div x-data="{ notificationOpen: false }" class="relative"> -->
+            <!-- <button @click="notificationOpen = ! notificationOpen" class="flex mx-4 text-gray-600 focus:outline-none">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button> -->
+
+            <!-- <div x-cloak x-show="notificationOpen" @click="notificationOpen = false" class="fixed inset-0 z-10 w-full h-full"></div> -->
+          </div>
+          <button
+            id="dropdownHoverButton"
+            data-dropdown-toggle="dropdownHover"
+            data-dropdown-trigger="hover"
+            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center"
+            type="button"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="me-2" height="17" width="17  " viewBox="0 0 448 512">
+              <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+              <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z" />
+            </svg>
+            sayyidinaakbar99@gmail.com
+            <!-- <svg class="w-2 h-2 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
+              </svg> -->
+            <svg class="mb-1 ms-2 d-block" height="18" width="18" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+              <path fill="#000000" d="M182.6 470.6c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128z" />
+            </svg>
+          </button>
+
+          <!-- Dropdown menu -->
+          <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Dashboard</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Settings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Earnings</a>
+              </li>
+              <li>
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Sign out</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- <div x-cloak x-show="notificationOpen" class="absolute right-0 z-10 mt-2 overflow-hidden bg-white rounded-lg shadow-xl w-80" style="width: 20rem">
+                <a href="#" class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
+                  <img class="object-cover w-8 h-8 mx-1 rounded-full" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar" />
+                  <p class="mx-2 text-sm"><span class="font-bold" href="#">Sara Salah</span> replied on the <span class="font-bold text-indigo-400" href="#">Upload Image</span> artical . 2m</p>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
+                  <img class="object-cover w-8 h-8 mx-1 rounded-full" src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80" alt="avatar" />
+                  <p class="mx-2 text-sm"><span class="font-bold" href="#">Slick Net</span> start following you . 45m</p>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
+                  <img class="object-cover w-8 h-8 mx-1 rounded-full" src="https://images.unsplash.com/photo-1450297350677-623de575f31c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" alt="avatar" />
+                  <p class="mx-2 text-sm"><span class="font-bold" href="#">Jane Doe</span> Like Your reply on <span class="font-bold text-indigo-400" href="#">Test with TDD</span> artical . 1h</p>
+                </a>
+                <a href="#" class="flex items-center px-4 py-3 -mx-2 text-gray-600 hover:text-white hover:bg-indigo-600">
+                  <img class="object-cover w-8 h-8 mx-1 rounded-full" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=398&q=80" alt="avatar" />
+                  <p class="mx-2 text-sm"><span class="font-bold" href="#">Abigail Bennett</span> start following you . 3h</p>
+                </a>
+              </div> -->
+          <!-- </div> -->
+
+          <!-- <div x-data="{ dropdownOpen: false }" class="relative">
+              <button @click="dropdownOpen = ! dropdownOpen" class="relative block w-8 h-8 overflow-hidden rounded-full shadow focus:outline-none">
+                <img class="object-cover w-full h-full" src="https://images.unsplash.com/photo-1528892952291-009c663ce843?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=296&q=80" alt="Your avatar" />
+              </button>
+
+              <div x-cloak x-show="dropdownOpen" @click="dropdownOpen = false" class="fixed inset-0 z-10 w-full h-full"></div>
+
+              <div x-cloak x-show="dropdownOpen" class="absolute right-0 z-10 w-48 mt-2 overflow-hidden bg-white rounded-md shadow-xl">
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Profile</a>
+                <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Products</a>
+                <a href="/login" class="block px-4 py-2 text-sm text-gray-700 hover:bg-indigo-600 hover:text-white">Logout</a>
+              </div>
+            </div> -->
+        </header>
+
+        <main class="flex-1 overflow-x-hidden overflow-y-auto p-10 bg-gray-200 relative">
+          <div class="absolute bg-[#96C3ED] w-[110px] h-[110px] rounded-full right-1/2"></div>
+          <div class="absolute bg-[#35AFE1] w-[85px] h-[85px] rounded-full right-2 bottom-1/3 translate-y-56"></div>
+          <div class="absolute bg-main w-[140px] h-[140px] right-1/3 rounded-full -translate-x-10 bottom-0 translate-y-56"></div>
+          <div class="relative">
+            <h2 class="flex px-2 rounded-sm font-inter border-l-4 border-main font-bold items-center text-main text-lg z-50">
+              <div class="bg-white h-10 w-10 me-5 rounded-full flex justify-center items-center">
+                <svg class="fill-main w-5 h-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                  <path
+                    d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"
+                  />
+                </svg>
+              </div>
+              Pengaturan
+            </h2>
+            <section class="flex gap-6 my-5">
+              <div class="flex flex-col w-full gap-6">
+                <div class="backdrop-blur w-full border border-[#515151] rounded-2xl p-3">
+                  <h2 class="text-main font-bold text-lg mb-2">Absensi</h2>
+                  <div class="flex gap-4">
+                    <div class="bg-[#96C3ED] w-full font-bold p-3 rounded-xl flex flex-col justify-center items-center">
+                      <h1 class="text-white text-7xl">20</h1>
+                      <p class="text-white">Sudah Absen</p>
+                    </div>
+                    <div class="bg-[#009DDE] w-full font-bold p-3 rounded-xl flex flex-col justify-center items-center">
+                      <h1 class="text-white text-7xl">15</h1>
+                      <p class="text-white">Belum Absen</p>
+                    </div>
+                    <div class="bg-main w-full font-bold p-3 rounded-xl flex flex-col justify-center items-center">
+                      <div class="radial-progress text-white" style="--value: 80" role="progressbar">80%</div>
+                      <p class="text-white">Complete</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="backdrop-blur w-full border border-[#515151] rounded-2xl p-3">
+                  <canvas id="chart" class="w-full"></canvas>
+                </div>
+              </div>
+              <div class="backdrop-blur-lg flex flex-col w-full border border-[#515151] rounded-2xl p-3">
+                <div class="bg-white w-full flex flex-col gap-2 py-6 px-4 mb-5 rounded-xl">
+                  <h1 class="text-main flex justify-center items-end font-extrabold text-8xl">08:30 <span class="text-4xl">WIB</span></h1>
+                  <div class="flex flex-col justify-start">
+                    <h3 class="text-main text-lg font-bold">Kabupaten Lamongan</h3>
+                    <div class="flex gap-2 items-center text-main text-base font-bold">
+                      <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                          fill="currentColor"
+                          d="M6.5 20q-2.275 0-3.887-1.575T1 14.575q0-1.95 1.175-3.475T5.25 9.15q.625-2.3 2.5-3.725T12 4q2.925 0 4.963 2.038T19 11q1.725.2 2.863 1.488T23 15.5q0 1.875-1.312 3.188T18.5 20zm0-2h12q1.05 0 1.775-.725T21 15.5q0-1.05-.725-1.775T18.5 13H17v-2q0-2.075-1.463-3.538T12 6Q9.925 6 8.463 7.463T7 11h-.5q-1.45 0-2.475 1.025T3 14.5q0 1.45 1.025 2.475T6.5 18m5.5-6"
+                        />
+                      </svg>
+                      <h3>31° Berawan T-32° R-24°</h3>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <div class="px-4 flex items-center justify-between">
+                    <span tabindex="0" class="focus:outline-none text-base font-bold text-[#1061CC]">Februari 2024</span>
+                    <div class="flex items-center">
+                      <button aria-label="calendar backward" class="bg-[#1061CC] rounded-full p-1 focus:text-gray-400 hover:text-gray-400 text-white box-border">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon icon-tabler icon-tabler-chevron-left"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <polyline points="15 6 9 12 15 18" />
+                        </svg>
+                      </button>
+                      <button aria-label="calendar forward" class="bg-[#1061CC] rounded-full p-1 focus:text-gray-400 hover:text-gray-400 ml-3 text-white">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="icon icon-tabler icon-tabler-chevron-right"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          stroke-width="1.5"
+                          stroke="currentColor"
+                          fill="none"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        >
+                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                          <polyline points="9 6 15 12 9 18" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between pt-9 overflow-x-auto">
+                    <table class="w-full">
+                      <thead>
+                        <tr>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">Mo</p>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">Tu</p>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">We</p>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">Th</p>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">Fr</p>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">Sa</p>
+                            </div>
+                          </th>
+                          <th>
+                            <div class="w-full flex justify-center">
+                              <p class="text-base font-medium text-center text-gray-800">Su</p>
+                            </div>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td class="pt-6">
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center"></div>
+                          </td>
+                          <td class="pt-6">
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center"></div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center"></div>
+                          </td>
+                          <td class="pt-6">
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">1</p>
+                            </div>
+                          </td>
+                          <td class="pt-6">
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">2</p>
+                            </div>
+                          </td>
+                          <td class="pt-6">
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">3</p>
+                            </div>
+                          </td>
+                          <td class="pt-6">
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">4</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">5</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">6</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">7</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="w-full h-full">
+                              <div class="flex items-center justify-center w-full rounded-full cursor-pointer">
+                                <a
+                                  role="link"
+                                  tabindex="0"
+                                  class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-[#1061CC] rounded-full"
+                                  >8</a
+                                >
+                              </div>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">9</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">10</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">11</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">12</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">13</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">14</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">15</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">16</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">17</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">18</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">19</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">20</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">21</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">22</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">23</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">24</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500">25</p>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">26</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">27</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">28</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">29</p>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="px-2 py-2 cursor-pointer flex w-full justify-center">
+                              <p class="text-base text-gray-500 font-medium">30</p>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </main>
+        <!--  -->
+      </div>
+    </div>
+    <script src="./main.js"></script>
+    <!-- <script src="../node_modules/flowbite/dist/flowbite.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      Number.prototype.comma_formatter = function () {
+        return this.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+      };
+
+      let chartData = function () {
+        return {
+          date: "today",
+          options: [
+            {
+              label: "Today",
+              value: "today",
+            },
+            {
+              label: "Last 7 Days",
+              value: "7days",
+            },
+            {
+              label: "Last 30 Days",
+              value: "30days",
+            },
+            {
+              label: "Last 6 Months",
+              value: "6months",
+            },
+            {
+              label: "This Year",
+              value: "year",
+            },
+          ],
+          showDropdown: false,
+          selectedOption: 0,
+          selectOption: function (index) {
+            this.selectedOption = index;
+            this.date = this.options[index].value;
+            this.renderChart();
+          },
+          data: null,
+          fetch: function () {
+            fetch("https://cdn.jsdelivr.net/gh/swindon/fake-api@master/tailwindAlpineJsChartJsEx1.json")
+              .then((res) => res.json())
+              .then((res) => {
+                this.data = res.dates;
+                this.renderChart();
+              });
+          },
+          renderChart: function () {
+            let c = false;
+
+            Chart.helpers.each(Chart.instances, function (instance) {
+              if (instance.chart.canvas.id == "chart") {
+                c = instance;
+              }
+            });
+
+            if (c) {
+              c.destroy();
+            }
+
+            let ctx = document.getElementById("chart").getContext("2d");
+
+            let chart = new Chart(ctx, {
+              type: "line",
+              data: {
+                labels: this.data[this.date].data.labels,
+                datasets: [
+                  {
+                    label: "Income",
+                    backgroundColor: "rgb(16, 97, 204, 0.25)",
+                    borderColor: "rgb(16, 97, 204, 1)",
+                    pointBackgroundColor: "rgb(16, 97, 204, 1)",
+                    data: this.data[this.date].data.income,
+                  },
+                  {
+                    label: "Expenses",
+                    backgroundColor: "rgba(237, 100, 166, 0.25)",
+                    borderColor: "rgba(237, 100, 166, 1)",
+                    pointBackgroundColor: "rgba(237, 100, 166, 1)",
+                    data: this.data[this.date].data.expenses,
+                  },
+                ],
+              },
+              layout: {
+                padding: {
+                  right: 10,
+                },
+              },
+              options: {
+                scales: {
+                  yAxes: [
+                    {
+                      gridLines: {
+                        display: false,
+                      },
+                      ticks: {
+                        callback: function (value, index, array) {
+                          return value > 1000 ? (value < 1000000 ? value / 1000 + "K" : value / 1000000 + "M") : value;
+                        },
+                      },
+                    },
+                  ],
+                },
+              },
+            });
+          },
+        };
+      };
+    </script>
+  </body>
+</html>
