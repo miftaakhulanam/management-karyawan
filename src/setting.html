@@ -19,10 +19,6 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" defer></script>
     <title>halo</title>
-    <style>
-      @import url(https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.min.css);
-      @import url(https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css);
-    </style>
   </head>
   <body class="font-inter">
     <div x-data="{ sidebarOpen: false }" class="flex h-screen bg-gray-200 font-roboto">
@@ -250,12 +246,14 @@
                   </div>
                 </div>
                 <div class="backdrop-blur w-full border border-[#515151] rounded-2xl p-3">
-                  <canvas id="chart" class="w-full"></canvas>
+                  <div x-data="{chartData:chartData()}" x-init="chartData.fetch()">
+                    <canvas id="chart" class="w-full"></canvas>
+                  </div>
                 </div>
               </div>
               <div class="backdrop-blur-lg flex flex-col w-full border border-[#515151] rounded-2xl p-3">
                 <div class="bg-white w-full flex flex-col gap-2 py-6 px-4 mb-5 rounded-xl">
-                  <h1 class="text-main flex justify-center items-end font-extrabold text-8xl">08:30 <span class="text-4xl">WIB</span></h1>
+                  <h1 class="text-main flex justify-center items-end font-bold text-8xl">08:30 <span class="text-4xl">WIB</span></h1>
                   <div class="flex flex-col justify-start">
                     <h3 class="text-main text-lg font-bold">Kabupaten Lamongan</h3>
                     <div class="flex gap-2 items-center text-main text-base font-bold">
@@ -610,9 +608,9 @@
                 datasets: [
                   {
                     label: "Income",
-                    backgroundColor: "rgb(16, 97, 204, 0.25)",
-                    borderColor: "rgb(16, 97, 204, 1)",
-                    pointBackgroundColor: "rgb(16, 97, 204, 1)",
+                    backgroundColor: "rgba(102, 126, 234, 0.25)",
+                    borderColor: "rgba(102, 126, 234, 1)",
+                    pointBackgroundColor: "rgba(102, 126, 234, 1)",
                     data: this.data[this.date].data.income,
                   },
                   {
