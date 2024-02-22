@@ -2,11 +2,17 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="referrer" content="always" />
     <link rel="stylesheet" href="./output.css" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
+      rel="stylesheet"
+    />
     <!-- font google -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,18 +21,17 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
     <title>halo</title>
   </head>
   <body class="font-inter">
-        <main class="flex-1 h-screen overflow-x-hidden overflow-y-auto p-10 bg-gray-200">  
+        <main class="flex h-screen justify-center items-center overflow-x-hidden overflow-y-auto p-10 bg-gray-200">  
           <section class="flex justify-center items-center">
             <div class="relative">
               <div class="bg-[#96C3ED] w-[100px] h-[100px] rounded-full absolute top-9"></div>
               <div class="bg-main w-[190px] h-[190px] rounded-full absolute -right-12 top-[55%]"></div>
               <div class="flex relative justify-center px-10 py-16 w-[530px] h-[300px] backdrop-blur m-16 border border-[#515151] rounded-xl">
                 <div class="absolute top-0 -translate-y-1/2 mt-12  w-[70px] h-[70px] flex justify-center items-center">
-                  <img src="img/logo.png" alt="">
+                  <a href="dashboard-admin.html"><img src="img/logo.png"  alt=""></a>
                 </div>
                 <form action="" class="flex flex-col gap-3 w-full mt-9">
                   <div class="flex items-center justify-center">
@@ -42,7 +47,7 @@
                     <svg class="h-5 text-gray-500" fill="none" @click="show = !show"
                       :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
                       viewbox="0 0 576 512">
-                      <path fill="currentColor"
+                      <path fill="currentColor" 
                         d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
                       </path>
                     </svg>
@@ -58,8 +63,9 @@
                   </div>
                   
                   
-                  <div class="flex justify-center">
-                    <button type="submit" class="bg-[#1061CC] w-44 h-9 rounded-full text-white font-semibold text-md hover:bg-blue-900 my-5">Login</button>
+                  <div class="flex justify-center text-center items-center">
+                   <a href="index.html" class="bg-main w-44 rounded-full text-white font-semibold text-md hover:bg-blue-900 my-5 py-2">Login</a>
+                   
                   </div>
                 </form>
               </div>

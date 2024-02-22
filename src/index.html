@@ -13,10 +13,17 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css"
       rel="stylesheet"
     />
+    <!-- font google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <title>halo</title>
   </head>
-  <body>
+  <body class="font-inter">
     <div
       x-data="{ sidebarOpen: false }"
       class="flex h-screen bg-gray-200 font-roboto"
@@ -56,7 +63,7 @@
         <nav class="mt-1 mx-3 font-semibold flex flex-col justify-end">
           <a
             class="flex items-center px-6 py-2 mt-3 text-white bg-gray-200 bg-opacity-25 rounded-md"
-            href="/"
+            href="index.html"
           >
             <!-- <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
@@ -78,7 +85,7 @@
 
           <a
             class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
-            href="/ui-elements"
+            href="absensi.html"
           >
             <svg
               class="w-6 h-6"
@@ -95,8 +102,8 @@
           </a>
 
           <a
-            class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
-            href="/tables"
+            class="flex items-center px-5 ps-5.5 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
+            href="monitoring.html"
           >
             <svg
               class="w-6 h-6"
@@ -114,7 +121,7 @@
 
           <a
             class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
-            href="/forms"
+            href="kelola-staf.html"
           >
             <svg
               class="w-6 h-6"
@@ -131,8 +138,8 @@
           </a>
 
           <a
-            class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
-            href="/forms"
+            class="flex items-center px-6 py-2 mt-1 mb-10 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
+            href="komplain-pelanggan.html"
           >
             <svg
               class="w-6 h-6"
@@ -147,9 +154,10 @@
 
             <span class="mx-3">Komplain</span>
           </a>
+          <p class="mt-14 mb-6"></p>
           <a
-            class="flex items-center px-6 py-2 mt-12 bg-white text-[#1061cc] hover:bg-gray-300 hover:text-[#1061cc] rounded-md"
-            href="/forms"
+            class="flex items-center px-6 py-2 px-14 mt-14 mb-8 bg-white text-[#1061cc] hover:bg-gray-300 hover:text-[#1061cc] rounded-md"
+            href="login.html"
           >
             <svg
               class="w-6 h-6"
@@ -278,7 +286,7 @@
                     d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"
                   />
                 </svg>
-                <a href="#" class="block px-4 py-2">Profile</a>
+                <a href="profile.html" class="block px-4 py-2">Profile</a>
               </li>
               <li
                 class="flex items-center py-1 px-4 border-b-2 mx-5 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
@@ -353,7 +361,7 @@
                     />
                   </g>
                 </svg>
-                <a href="#" class="block px-4 py-2">Pengaturan</a>
+                <a href="setting.html" class="block px-4 py-2">Pengaturan</a>
               </li>
               <li
                 class="flex items-center py-1 px-4 border-b-2 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
@@ -368,7 +376,7 @@
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 16.5c-.83 0-1.5-.67-1.5-1.5h3c0 .83-.67 1.5-1.5 1.5m5-2.5H7v-1l1-1v-2.61C8 9.27 9.03 7.47 11 7v-.5c0-.57.43-1 1-1s1 .43 1 1V7c1.97.47 3 2.28 3 4.39V14l1 1z"
                   />
                 </svg>
-                <a href="#" class="block px-4 py-2">Notifikasi</a>
+                <a href="notif.html" class="block px-4 py-2">Notifikasi</a>
               </li>
             </ul>
           </div>
