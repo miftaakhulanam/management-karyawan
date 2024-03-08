@@ -51,7 +51,7 @@
           <h1 class="text-2xl font-bold text-center leading-[22px]">
             MANAGEMENT KARYAWAN
           </h1>
-          <h2 class="text-lg font-normal text-center">
+          <h2 class="md:text-lg text-md font-normal text-center">
             PT. PERSADA DATA<br />
             MULTIMEDIA
           </h2>
@@ -175,7 +175,9 @@
       </div>
 
       <div class="flex-1 flex flex-col overflow-hidden">
-        <header class="flex items-center justify-between px-14 py-3 bg-white">
+        <header
+          class="flex items-center justify-between px-7 py-[13.2px] bg-white"
+        >
           <div class="flex items-center">
             <button
               @click="sidebarOpen = true"
@@ -229,14 +231,12 @@
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-md text-sm px-5 py-2 text-center inline-flex items-center"
+            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm md:px-5 px-3 py-2 text-center inline-flex items-center"
             type="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="me-2"
-              height="17"
-              width="17  "
+              class="md:me-2 md:w-3 w-0"
               viewBox="0 0 448 512"
             >
               <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -249,9 +249,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
               </svg> -->
             <svg
-              class="mb-1 ms-2 d-block"
-              height="18"
-              width="18"
+              class="mb-1 ms-2 h-3 d-block"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 320 512"
@@ -266,17 +264,17 @@
           <!-- Dropdown menu -->
           <div
             id="dropdownHover"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52"
           >
             <ul
-              class="font-medium text-md text-gray-700"
+              class="font-medium md:text-md text-sm text-gray-700"
               aria-labelledby="dropdownHoverButton"
             >
               <li
-                class="flex items-center px-4 border-b-2 mx-5 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 px-4 border-b-2 mx-4 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -287,11 +285,12 @@
                 </svg>
                 <a href="profile-admin.html" class="block px-4 py-2">Profile</a>
               </li>
+
               <li
-                class="flex items-center py-1 px-4 border-b-2 mx-5 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 py-1 px-4 border-b-2 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 26 26"
                 >
@@ -365,10 +364,10 @@
                 >
               </li>
               <li
-                class="flex items-center py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
+                class="flex items-center pl-4 py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
               >
                 <svg
-                  class="w-10 h-10"
+                  class="md:w-10 md:h-10 h-8 md:ps-0 ps-0.5 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -419,30 +418,36 @@
             </div> -->
         </header>
 
-        <main class="flex-1 overflow-x-hidden overflow-y-auto p-10 bg-gray-200">
+        <main
+          class="flex-1 overflow-x-hidden overflow-y-auto md:p-10 p-4 bg-gray-200"
+        >
           <div class="flex flex-col gap-6">
-            <div class="bg-white p-8 rounded-xl shadow-xl">
+            <div class="bg-white md:p-8 p-3 md:pr-1 pr-1 rounded-xl shadow-xl">
               <div class="flex relative">
                 <div class="flex flex-col gap-2">
-                  <h1 class="text-[#1061CC] font-bold text-3xl">
+                  <h1 class="text-[#1061CC] font-bold md:text-3xl text-md">
                     Hallo, staff001@gmail.com
                   </h1>
                   <div>
-                    <p class="text-gray-900 font-bold">
+                    <p class="text-gray-900 font-bold md:text-lg text-2xs">
                       Siap memuali harimu di PT. Persada Data Multimedia ?
                     </p>
-                    <p>yuk lihat dan cek beranda mu ...</p>
+                    <p class="md:text-lg text-xs">
+                      yuk lihat dan cek beranda mu ...
+                    </p>
                   </div>
                 </div>
                 <img
-                  class="absolute w-36 -right-12 -bottom-8"
+                  class="absolute md:w-36 w-16 md:-right-5 md:-bottom-8 -right-3"
                   src="../src/img/avatar.png"
                   alt=""
                 />
               </div>
             </div>
-            <div class="flex gap-6">
-              <div class="md:p-8 p-5 bg-white rounded-xl shadow-xl flex-1">
+            <div class="flex flex-col md:flex-row gap-6">
+              <div
+                class="md:p-8 p-5 bg-white rounded-xl shadow-xl flex flex-col w-full"
+              >
                 <div class="px-4 flex items-center justify-between">
                   <span
                     tabindex="0"
@@ -632,10 +637,14 @@
                           </div>
                         </td>
                         <td>
-                          <div
-                            class="px-2 py-2 cursor-pointer flex w-full justify-center"
-                          >
-                            <p class="text-base text-gray-500">8</p>
+                          <div class="w-full h-full">
+                            <div
+                              class="flex items-center justify-center w-full rounded-full cursor-pointer"
+                            >
+                              <p class="text-base text-gray-500 font-medium">
+                                8
+                              </p>
+                            </div>
                           </div>
                         </td>
                         <td>
@@ -726,7 +735,9 @@
                           <div
                             class="px-2 py-2 cursor-pointer flex w-full justify-center"
                           >
-                            <p class="text-base text-gray-500">19</p>
+                            <p class="text-base text-gray-500 font-medium">
+                              19
+                            </p>
                           </div>
                         </td>
                         <td>
@@ -739,17 +750,12 @@
                           </div>
                         </td>
                         <td>
-                          <div class="w-full h-full">
-                            <div
-                              class="flex items-center justify-center w-full rounded-full cursor-pointer"
-                            >
-                              <a
-                                role="link"
-                                tabindex="0"
-                                class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-[#1061CC] rounded-full"
-                                >21</a
-                              >
-                            </div>
+                          <div
+                            class="px-2 py-2 cursor-pointer flex w-full justify-center"
+                          >
+                            <p class="text-base text-gray-500 font-medium">
+                              21
+                            </p>
                           </div>
                         </td>
                         <td>
@@ -765,9 +771,12 @@
                           <div
                             class="px-2 py-2 cursor-pointer flex w-full justify-center"
                           >
-                            <p class="text-base text-gray-500 font-medium">
-                              23
-                            </p>
+                            <a
+                              role="link"
+                              tabindex="0"
+                              class="focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 focus:bg-indigo-500 hover:bg-indigo-500 text-base w-8 h-8 flex items-center justify-center font-medium text-white bg-[#1061CC] rounded-full"
+                              >23</a
+                            >
                           </div>
                         </td>
                         <td>
@@ -839,10 +848,10 @@
               <!-- widget -->
               <!-- <div class="min-h-screen flex items-center justify-center flex-1"> -->
               <div
-                class="flex flex-col bg-white rounded-xl shadow-xl p-8 w-full flex-1"
+                class="flex flex-col bg-white rounded-xl shadow-xl md:mt-0 gap-3 p-8 w-full"
               >
                 <div class="font-bold text-xl">Lamongan</div>
-                <div class="text-sm text-gray-500">Rabu 21 Feb 2024</div>
+                <div class="text-sm text-gray-500">Jumat 23 Feb 2024</div>
                 <div
                   class="mt-6 text-6xl self-center inline-flex items-center justify-center rounded-lg text-[rgb(16,97,204)] h-24 w-24"
                 >

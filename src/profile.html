@@ -23,7 +23,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>halo</title>
   </head>
-  <body>
+  <body class="font-inter">
     <div
       x-data="{ sidebarOpen: false }"
       class="flex h-screen bg-gray-200 font-roboto"
@@ -51,13 +51,11 @@
           <h1 class="text-2xl font-bold text-center leading-[22px]">
             MANAGEMENT KARYAWAN
           </h1>
-          <h2 class="text-lg font-normal text-center">
+          <h2 class="md:text-lg text-md font-normal text-center">
             PT. PERSADA DATA<br />
             MULTIMEDIA
           </h2>
-          <p class="text-center text-sm font-semibold">
-            admin01ptpdm@gmail.com
-          </p>
+          <p class="text-center text-sm font-semibold">admin01@gmail.com</p>
         </div>
 
         <nav class="mt-1 mx-3 font-semibold flex flex-col justify-end">
@@ -84,7 +82,7 @@
           </a>
 
           <a
-            class="flex items-center px-6 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
+            class="flex items-center ps-[24px] py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
             href="absensi.html"
           >
             <svg
@@ -102,7 +100,7 @@
           </a>
 
           <a
-            class="flex items-center px-5 ps-5.5 py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
+            class="flex items-center px-5 ps-[23px] whitespace-nowrap py-2 mt-1 text-white hover:bg-gray-200 hover:bg-opacity-25 hover:text-gray-100 rounded-md"
             href="monitoring.html"
           >
             <svg
@@ -116,7 +114,7 @@
               />
             </svg>
 
-            <span class="mx-3">Monitoring Staff</span>
+            <span class="ms-[13px]">Monitoring Staff</span>
           </a>
 
           <a
@@ -176,7 +174,9 @@
       </div>
 
       <div class="flex-1 flex flex-col overflow-hidden">
-        <header class="flex items-center justify-between px-14 py-3 bg-white">
+        <header
+          class="flex items-center justify-between md:px-14 px-4 py-3 bg-white"
+        >
           <div class="flex items-center">
             <button
               @click="sidebarOpen = true"
@@ -230,14 +230,12 @@
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2 text-center inline-flex items-center"
+            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm md:px-5 px-3 py-2 text-center inline-flex items-center"
             type="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="me-2"
-              height="17"
-              width="17  "
+              class="md:me-2 md:w-3 w-0"
               viewBox="0 0 448 512"
             >
               <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -245,14 +243,12 @@
                 d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"
               />
             </svg>
-            sayyidinaakbar99@gmail.com
+            admin01@gmail.com
             <!-- <svg class="w-2 h-2 ms-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
               </svg> -->
             <svg
-              class="mb-1 ms-2 d-block"
-              height="18"
-              width="18"
+              class="mb-1 ms-2 h-3 d-block"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 320 512"
@@ -267,17 +263,17 @@
           <!-- Dropdown menu -->
           <div
             id="dropdownHover"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-72"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52"
           >
             <ul
-              class="font-medium text-md text-gray-700"
+              class="font-medium md:text-md text-sm text-gray-700"
               aria-labelledby="dropdownHoverButton"
             >
               <li
-                class="flex items-center py-1 px-9 border-b-2 mx-0 bg-gray-200 hover:mx-0 hover:ps-9 rounded-lg"
+                class="flex items-center pl-5 px-4 border-b-2 mx-4 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -286,13 +282,15 @@
                     d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"
                   />
                 </svg>
-                <a href="profile.html" class="block px-4 py-2">Profile</a>
+                <a href="profile.html" class="block md:pl-3 pl-4 py-2"
+                  >Profile</a
+                >
               </li>
               <li
-                class="flex items-center py-1 px-4 border-b-2 mx-5 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 py-1 px-4 border-b-2 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 26 26"
                 >
@@ -361,13 +359,15 @@
                     />
                   </g>
                 </svg>
-                <a href="setting.html" class="block px-4 py-2">Pengaturan</a>
+                <a href="setting.html" class="block md:pl-3 pl-4 py-2"
+                  >Pengaturan</a
+                >
               </li>
               <li
-                class="flex items-center py-1 px-4 border-b-2 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
+                class="flex items-center pl-4 py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
               >
                 <svg
-                  class="w-10 h-10"
+                  class="md:w-10 md:h-10 h-8 md:ps-0 ps-0.5 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -376,7 +376,9 @@
                     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10s10-4.48 10-10S17.52 2 12 2m0 16.5c-.83 0-1.5-.67-1.5-1.5h3c0 .83-.67 1.5-1.5 1.5m5-2.5H7v-1l1-1v-2.61C8 9.27 9.03 7.47 11 7v-.5c0-.57.43-1 1-1s1 .43 1 1V7c1.97.47 3 2.28 3 4.39V14l1 1z"
                   />
                 </svg>
-                <a href="notif.html" class="block px-4 py-2">Notifikasi</a>
+                <a href="notif.html" class="block md:pl-2 pl-3.5 py-2"
+                  >Notifikasi</a
+                >
               </li>
             </ul>
           </div>
@@ -416,15 +418,15 @@
             </div> -->
         </header>
 
-        <main class="flex-1 overflow-x-hidden overflow-y-auto p-10 bg-gray-200">
+        <main class="overflow-y-auto p-10 bg-gray-200">
           <h2
-            class="flex px-2 rounded-sm font-inter border-l-4 border-main font-bold items-center text-main text-lg"
+            class="flex md:px-2 rounded-sm font-inter border-l-4 border-main font-bold items-center text-main text-lg"
           >
             <div
-              class="bg-white h-10 w-10 me-5 rounded-full flex justify-center items-center"
+              class="bg-white md:h-10 md:w-10 w-8 w-0 h-0 md:me-5 -me-4 rounded-full flex justify-center items-center"
             >
               <svg
-                class="fill-main h-5 w-5"
+                class="fill-main md:h-5 md:w-5 h-0 w-0"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
               >
@@ -447,7 +449,7 @@
                 class="bg-[#35AFE1] w-[80px] h-[80px] rounded-full absolute bottom-8 left-12"
               ></div>
               <div
-                class="flex relative justify-center px-10 py-16 w-[400px] h-[400px] backdrop-blur m-16 border border-[#515151] rounded-xl"
+                class="flex relative justify-center md:px-10 px-4 py-16 md:w-[400px] md:h-[400px] w-[305px] h-[400px] backdrop-blur m-16 border border-[#515151] rounded-xl"
               >
                 <div
                   class="absolute top-0 -translate-y-1/2 bg-white w-[70px] h-[70px] rounded-full flex justify-center items-center"
@@ -469,7 +471,7 @@
                       type="text"
                       name="nama"
                       id="nama"
-                      class="h-8 border-none rounded-md"
+                      class="h-8 md:w-[205px] w-[180px] border-none rounded-md"
                     />
                   </div>
                   <div class="flex items-center justify-between">
@@ -478,7 +480,7 @@
                       type="text"
                       name="username"
                       id="username"
-                      class="h-8 border-none rounded-md"
+                      class="h-8 md:w-[205px] w-[180px] border-none rounded-md"
                     />
                   </div>
                   <div class="flex items-center justify-between">
@@ -487,7 +489,7 @@
                       type="password"
                       name="password"
                       id="password"
-                      class="h-8 border-none rounded-md"
+                      class="h-8 md:w-[205px] w-[180px] border-none rounded-md"
                     />
                   </div>
                   <div class="flex items-center justify-between">
@@ -496,7 +498,7 @@
                       type="text"
                       name="telepon"
                       id="telepon"
-                      class="h-8 border-none rounded-md"
+                      class="h-8 md:w-[205px] w-[180px] border-none rounded-md"
                     />
                   </div>
                   <div class="flex items-center justify-between">
@@ -505,7 +507,7 @@
                       type="text"
                       name="alamat"
                       id="alamat"
-                      class="h-8 border-none rounded-md"
+                      class="h-8 md:w-[205px] w-[180px] border-none rounded-md"
                     />
                   </div>
                   <div class="flex items-center justify-between">
@@ -514,12 +516,12 @@
                       type="text"
                       name="jabatan"
                       id="jabatan"
-                      class="h-8 border-none rounded-md"
+                      class="h-8 md:w-[205px] w-[180px] border-none rounded-md"
                     />
                   </div>
-                  <div class="flex justify-center mt-2">
+                  <div class="flex justify-center mt-4">
                     <button
-                      class="bg-main py-1 px-4 rounded-full text-sm font-medium text-white"
+                      class="bg-main py-2 px-6 rounded-full text-sm font-medium text-white"
                     >
                       SIMPAN
                     </button>

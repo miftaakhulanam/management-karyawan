@@ -24,34 +24,33 @@
     <title>halo</title>
   </head>
   <body class="font-inter">
-        <main class="flex h-screen justify-center items-center overflow-x-hidden overflow-y-auto p-10 bg-gray-200">  
-          <section class="flex justify-center items-center">
+        <main class="flex h-screen justify-center items-center overflow-x-hidden overflow-y-auto bg-gray-200 ">  
+          <section class="flex justify-center -mt-16 items-center">
             <div class="relative">
-              <div class="bg-[#96C3ED] w-[100px] h-[100px] rounded-full absolute top-9"></div>
-              <div class="bg-main w-[190px] h-[190px] rounded-full absolute -right-12 top-[55%]"></div>
-              <div class="flex relative justify-center px-10 py-16 w-[530px] h-[300px] backdrop-blur m-16 border border-[#515151] rounded-xl">
-                <div class="absolute top-0 -translate-y-1/2 mt-12  w-[70px] h-[70px] flex justify-center items-center">
+              <div class="bg-[#96C3ED] md:w-[100px] md:h-[100px] sm:w-[80px] sm:h-[80px] w-[70px] h-[70px] rounded-full absolute top-9 md:left-0 left-6"></div>
+              <div class="bg-main md:w-[190px] md:h-[190px] sm:w-[150px] sm:h-[150px] w-[120px] h-[120px] rounded-full absolute md:-right-9 md:top-[58%] sm:-right-2 sm:top-[65%] right-1 top-[68%]"></div>
+              <div class="flex relative justify-center md:py-16 sm:py-16 py-12 md:w-[530px] md:h-[300px] sm:w-[450px] sm:h-[300px] w-[270px] h-[300px] backdrop-blur m-16 border border-[#515151] rounded-xl">
+                <div class="absolute sm:-mt-11 -mt-10 sm:w-[70px] w-[80px] flex justify-center items-center">
                   <a href="dashboard-admin.html"><img src="img/logo.png"  alt=""></a>
                 </div>
-                <form action="" class="flex flex-col gap-3 w-full mt-9">
+                <form action="" class="flex flex-col gap-3 sm:mt-10 mt-[58px]">
                   <div class="flex items-center justify-center">
-                    <label for="username" class="text-black/50"></label>
-                    <input type="text" name="username" placeholder="Username" id="username" class="text-md ps-6 h-9 w-96 border-none rounded-md" />
+                    <label for="username"></label>
+                    <input type="text" name="username" placeholder="Username" id="username"  class="md:text-md text-sm md:h-9 md:w-96 sm:ps-6 sm:h-9 sm:w-72 w-52 ps-4 h-10 border-none rounded-md text-black"/>
                   </div>
                 
                   <div class="flex items-center justify-center" x-data="{ show: true }">
-                  <span class="text-black/50"></span>
                   <div class="relative">
-                  <input placeholder="Password" :type="show ? 'password' : 'text'"class="text-md ps-6 h-9 w-96 border-none rounded-md"/>
-                  <div class="absolute inset-y-0 right-0 pr-3 flex items-center text-sm leading-5">
-                    <svg class="h-5 text-gray-500" fill="none" @click="show = !show"
+                  <input placeholder="Password" :type="show ? 'password' : 'text'" class="md:text-md text-sm md:ps-6 md:h-9 md:w-96 sm:ps-6 sm:h-9 sm:w-72 w-52 ps-4 h-10 pe-9 border-none rounded-md text-black"/>
+                  <div class="absolute inset-y-0 right-0 pr-3 flex items-center leading-5">
+                    <svg class="md:h-5 h-4 text-gray-500" fill="none" @click="show = !show"
                       :class="{'hidden': !show, 'block':show }" xmlns="http://www.w3.org/2000/svg"
                       viewbox="0 0 576 512">
                       <path fill="currentColor" 
                         d="M572.52 241.4C518.29 135.59 410.93 64 288 64S57.68 135.64 3.48 241.41a32.35 32.35 0 0 0 0 29.19C57.71 376.41 165.07 448 288 448s230.32-71.64 284.52-177.41a32.35 32.35 0 0 0 0-29.19zM288 400a144 144 0 1 1 144-144 143.93 143.93 0 0 1-144 144zm0-240a95.31 95.31 0 0 0-25.31 3.79 47.85 47.85 0 0 1-66.9 66.9A95.78 95.78 0 1 0 288 160z">
                       </path>
                     </svg>
-                    <svg class="h-5 text-gray-700" fill="none" @click="show = !show"
+                    <svg class="md:h-5 sm:h-4 h-4 text-gray-700" fill="none" @click="show = !show"
                       :class="{'block': !show, 'hidden':show }" xmlns="http://www.w3.org/2000/svg"
                       viewbox="0 0 640 512">
                       <path fill="currentColor"
@@ -64,7 +63,7 @@
                   
                   
                   <div class="flex justify-center text-center items-center">
-                   <a href="index.html" class="bg-main w-44 rounded-full text-white font-semibold text-md hover:bg-blue-900 my-5 py-2">Login</a>
+                   <a href="index.html" class="bg-main md:w-44 sm:w-40 w-36 rounded-full text-white font-semibold text-md hover:bg-blue-900 sm:my-5 my-4 py-2 ">Login</a>
                    
                   </div>
                 </form>
@@ -75,8 +74,6 @@
         <!--  -->
       </div>
     </div>
-    <script src="./main.js"></script>
-    <!-- <script src="../node_modules/flowbite/dist/flowbite.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js" defer></script>
   </body>
 </html>

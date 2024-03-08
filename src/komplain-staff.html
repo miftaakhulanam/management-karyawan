@@ -51,7 +51,7 @@
           <h1 class="text-2xl font-bold text-center leading-[22px]">
             MANAGEMENT KARYAWAN
           </h1>
-          <h2 class="text-lg font-normal text-center">
+          <h2 class="md:text-lg text-md font-normal text-center">
             PT. PERSADA DATA<br />
             MULTIMEDIA
           </h2>
@@ -175,7 +175,9 @@
       </div>
 
       <div class="flex-1 flex flex-col overflow-hidden">
-        <header class="flex items-center justify-between px-14 py-3 bg-white">
+        <header
+          class="flex items-center justify-between px-7 py-[13.2px] bg-white"
+        >
           <div class="flex items-center">
             <button
               @click="sidebarOpen = true"
@@ -229,14 +231,12 @@
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-md text-sm px-5 py-2 text-center inline-flex items-center"
+            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm md:px-5 px-3 py-2 text-center inline-flex items-center"
             type="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="me-2"
-              height="17"
-              width="17  "
+              class="md:me-2 md:w-3 w-0"
               viewBox="0 0 448 512"
             >
               <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -249,9 +249,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
               </svg> -->
             <svg
-              class="mb-1 ms-2 d-block"
-              height="18"
-              width="18"
+              class="mb-1 ms-2 h-3 d-block"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 320 512"
@@ -266,17 +264,17 @@
           <!-- Dropdown menu -->
           <div
             id="dropdownHover"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-60"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52"
           >
             <ul
-              class="font-medium text-md text-gray-700"
+              class="font-medium md:text-md text-sm text-gray-700"
               aria-labelledby="dropdownHoverButton"
             >
               <li
-                class="flex items-center px-4 border-b-2 mx-5 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 px-4 border-b-2 mx-4 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -287,11 +285,12 @@
                 </svg>
                 <a href="profile-admin.html" class="block px-4 py-2">Profile</a>
               </li>
+
               <li
-                class="flex items-center py-1 px-4 border-b-2 mx-5 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 py-1 px-4 border-b-2 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 26 26"
                 >
@@ -365,10 +364,10 @@
                 >
               </li>
               <li
-                class="flex items-center py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
+                class="flex items-center pl-4 py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
               >
                 <svg
-                  class="w-10 h-10"
+                  class="md:w-10 md:h-10 h-8 md:ps-0 ps-0.5 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -419,12 +418,14 @@
             </div> -->
         </header>
 
-        <main class="flex-1 overflow-x-hidden overflow-y-auto p-10 bg-gray-200">
+        <main
+          class="flex-1 overflow-x-auto overflow-y-auto md:p-10 p-4 bg-gray-200"
+        >
           <h2
-            class="flex bg-gradient-to-r from-[#1061CC] to-currentcolor-500 p-2 rounded-lg font-inter font-bold text-white text-lg items-center"
+            class="flex sticky left-0 bg-gradient-to-r from-[#1061CC] to-currentcolor-500 p-2 rounded-lg font-inter font-bold text-white md:text-lg text-md"
           >
             <svg
-              class="h-7 w-7 me-2 ps-1"
+              class="md:h-7 md:w-7 w-6 h-6 me-2 ps-1"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 512 512"
             >
@@ -437,7 +438,7 @@
             Komplain
           </h2>
 
-          <div class="mt-6 overflow-x-auto">
+          <div class="mt-6 whitespace-nowrap">
             <table class="w-full table-auto">
               <thead class="">
                 <tr
@@ -447,12 +448,14 @@
                   <th class="px-4 py-3">Nama</th>
                   <th class="px-4 py-3">Id Pelanggan</th>
                   <th class="px-4 py-3">Pesan</th>
-                  <th class="px-4 py-3">Pic</th>
+
                   <th class="px-4 py-3">Update</th>
                 </tr>
               </thead>
               <tbody class="text-sm font-normal text-gray-700 text-center">
-                <tr class="py-10 bg-gray-100 hover:bg-gray-200 font-medium">
+                <tr
+                  class="py-10 bg-gray-100 hover:bg-gray-200 font-medium border-l-2 hover:border-gray-400 border-gray-100"
+                >
                   <td class="ps-4">1.</td>
                   <td class="px-4 py-4">Abas</td>
                   <td class="px-4 py-4">SWH-0271-23</td>
@@ -461,32 +464,7 @@
                       <p>Interface LACP-BUNGAH (>90%)</p>
                     </div>
                   </td>
-                  <td class="px-4 py-4">
-                    <div class="flex gap-3 justify-center">
-                      <a href="tampilkan-pic-problem-staff.html">
-                        <svg
-                          class="fill-main w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 384 512"
-                        >
-                          <path
-                            d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm152 32c5.3 0 10.2 2.6 13.2 6.9l88 128c3.4 4.9 3.7 11.3 1 16.5s-8.2 8.6-14.2 8.6H216 176 128 80c-5.8 0-11.1-3.1-13.9-8.1s-2.8-11.2 .2-16.1l48-80c2.9-4.8 8.1-7.8 13.7-7.8s10.8 2.9 13.7 7.8l12.8 21.4 48.3-70.2c3-4.3 7.9-6.9 13.2-6.9z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="">
-                        <svg
-                          class="fill-yellow-300 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
+
                   <td class="px-4 py-4">
                     <div class="flex items-center gap-3 justify-center">
                       <div class="bg-[#04D900] w-2.5 h-2.5 rounded-full"></div>
@@ -494,7 +472,9 @@
                     </div>
                   </td>
                 </tr>
-                <tr class="py-10 bg-gray-100 hover:bg-gray-200 font-medium">
+                <tr
+                  class="py-10 bg-gray-100 hover:bg-gray-200 font-medium border-l-2 hover:border-gray-400 border-gray-100"
+                >
                   <td class="ps-4">2.</td>
                   <td class="px-4 py-4">Abas</td>
                   <td class="px-4 py-4">SWH-0271-23</td>
@@ -503,32 +483,7 @@
                       <p>Interface LACP-BUNGAH (>90%)</p>
                     </div>
                   </td>
-                  <td class="px-4 py-4">
-                    <div class="flex gap-3 justify-center">
-                      <a href="tampilkan-pic-problem-staff.html">
-                        <svg
-                          class="fill-main w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 384 512"
-                        >
-                          <path
-                            d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm152 32c5.3 0 10.2 2.6 13.2 6.9l88 128c3.4 4.9 3.7 11.3 1 16.5s-8.2 8.6-14.2 8.6H216 176 128 80c-5.8 0-11.1-3.1-13.9-8.1s-2.8-11.2 .2-16.1l48-80c2.9-4.8 8.1-7.8 13.7-7.8s10.8 2.9 13.7 7.8l12.8 21.4 48.3-70.2c3-4.3 7.9-6.9 13.2-6.9z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="">
-                        <svg
-                          class="fill-yellow-300 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
+
                   <td class="px-4 py-4">
                     <div class="flex items-center gap-3 justify-center">
                       <div class="bg-[#04D900] w-2.5 h-2.5 rounded-full"></div>
@@ -536,7 +491,9 @@
                     </div>
                   </td>
                 </tr>
-                <tr class="py-10 bg-gray-100 hover:bg-gray-200 font-medium">
+                <tr
+                  class="py-10 bg-gray-100 hover:bg-gray-200 font-medium border-l-2 hover:border-gray-400 border-gray-100"
+                >
                   <td class="ps-4">3.</td>
                   <td class="px-4 py-4">Abas</td>
                   <td class="px-4 py-4">SWH-0271-23</td>
@@ -545,32 +502,7 @@
                       <p>Interface LACP-BUNGAH (>90%)</p>
                     </div>
                   </td>
-                  <td class="px-4 py-4">
-                    <div class="flex gap-3 justify-center">
-                      <a href="tampilkan-pic-problem-staff.html">
-                        <svg
-                          class="fill-main w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 384 512"
-                        >
-                          <path
-                            d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm152 32c5.3 0 10.2 2.6 13.2 6.9l88 128c3.4 4.9 3.7 11.3 1 16.5s-8.2 8.6-14.2 8.6H216 176 128 80c-5.8 0-11.1-3.1-13.9-8.1s-2.8-11.2 .2-16.1l48-80c2.9-4.8 8.1-7.8 13.7-7.8s10.8 2.9 13.7 7.8l12.8 21.4 48.3-70.2c3-4.3 7.9-6.9 13.2-6.9z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="">
-                        <svg
-                          class="fill-yellow-300 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
+
                   <td class="px-4 py-4">
                     <div class="flex items-center gap-3 justify-center">
                       <div class="bg-[#04D900] w-2.5 h-2.5 rounded-full"></div>
@@ -578,7 +510,9 @@
                     </div>
                   </td>
                 </tr>
-                <tr class="py-10 bg-gray-100 hover:bg-gray-200 font-medium">
+                <tr
+                  class="py-10 bg-gray-100 hover:bg-gray-200 font-medium border-l-2 hover:border-gray-400 border-gray-100"
+                >
                   <td class="ps-4">4.</td>
                   <td class="px-4 py-4">Abas</td>
                   <td class="px-4 py-4">SWH-0271-23</td>
@@ -587,116 +521,7 @@
                       <p>Interface LACP-BUNGAH (>90%)</p>
                     </div>
                   </td>
-                  <td class="px-4 py-4">
-                    <div class="flex gap-3 justify-center">
-                      <a href="tampilkan-pic-problem-staff.html">
-                        <svg
-                          class="fill-main w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 384 512"
-                        >
-                          <path
-                            d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm152 32c5.3 0 10.2 2.6 13.2 6.9l88 128c3.4 4.9 3.7 11.3 1 16.5s-8.2 8.6-14.2 8.6H216 176 128 80c-5.8 0-11.1-3.1-13.9-8.1s-2.8-11.2 .2-16.1l48-80c2.9-4.8 8.1-7.8 13.7-7.8s10.8 2.9 13.7 7.8l12.8 21.4 48.3-70.2c3-4.3 7.9-6.9 13.2-6.9z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="">
-                        <svg
-                          class="fill-yellow-300 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
-                  <td class="px-4 py-4">
-                    <div class="flex items-center gap-3 justify-center">
-                      <div class="bg-[#04D900] w-2.5 h-2.5 rounded-full"></div>
-                      <p>Update</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="py-10 bg-gray-100 hover:bg-gray-200 font-medium">
-                  <td class="ps-4">5.</td>
-                  <td class="px-4 py-4">Abas</td>
-                  <td class="px-4 py-4">SWH-0271-23</td>
-                  <td class="px-4 py-4 flex justify-center">
-                    <div class="bg-[#FFA235] w-max py-1 px-5 rounded-md">
-                      <p>Interface LACP-BUNGAH (>90%)</p>
-                    </div>
-                  </td>
-                  <td class="px-4 py-4">
-                    <div class="flex gap-3 justify-center">
-                      <a href="tampilkan-pic-problem-staff.html">
-                        <svg
-                          class="fill-main w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 384 512"
-                        >
-                          <path
-                            d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm152 32c5.3 0 10.2 2.6 13.2 6.9l88 128c3.4 4.9 3.7 11.3 1 16.5s-8.2 8.6-14.2 8.6H216 176 128 80c-5.8 0-11.1-3.1-13.9-8.1s-2.8-11.2 .2-16.1l48-80c2.9-4.8 8.1-7.8 13.7-7.8s10.8 2.9 13.7 7.8l12.8 21.4 48.3-70.2c3-4.3 7.9-6.9 13.2-6.9z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="">
-                        <svg
-                          class="fill-yellow-300 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
-                  <td class="px-4 py-4">
-                    <div class="flex items-center gap-3 justify-center">
-                      <div class="bg-[#04D900] w-2.5 h-2.5 rounded-full"></div>
-                      <p>Update</p>
-                    </div>
-                  </td>
-                </tr>
-                <tr class="py-10 bg-gray-100 hover:bg-gray-200 font-medium">
-                  <td class="ps-4">6.</td>
-                  <td class="px-4 py-4">Abas</td>
-                  <td class="px-4 py-4">SWH-0271-23</td>
-                  <td class="px-4 py-4 flex justify-center">
-                    <div class="bg-[#FFA235] w-max py-1 px-5 rounded-md">
-                      <p>Interface LACP-BUNGAH (>90%)</p>
-                    </div>
-                  </td>
-                  <td class="px-4 py-4">
-                    <div class="flex gap-3 justify-center">
-                      <a href="tampilkan-pic-problem-staff.html">
-                        <svg
-                          class="fill-main w-5"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 384 512"
-                        >
-                          <path
-                            d="M64 0C28.7 0 0 28.7 0 64V448c0 35.3 28.7 64 64 64H320c35.3 0 64-28.7 64-64V160H256c-17.7 0-32-14.3-32-32V0H64zM256 0V128H384L256 0zM64 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm152 32c5.3 0 10.2 2.6 13.2 6.9l88 128c3.4 4.9 3.7 11.3 1 16.5s-8.2 8.6-14.2 8.6H216 176 128 80c-5.8 0-11.1-3.1-13.9-8.1s-2.8-11.2 .2-16.1l48-80c2.9-4.8 8.1-7.8 13.7-7.8s10.8 2.9 13.7 7.8l12.8 21.4 48.3-70.2c3-4.3 7.9-6.9 13.2-6.9z"
-                          />
-                        </svg>
-                      </a>
-                      <a href="">
-                        <svg
-                          class="fill-yellow-300 w-6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 512 512"
-                        >
-                          <path
-                            d="M410.3 231l11.3-11.3-33.9-33.9-62.1-62.1L291.7 89.8l-11.3 11.3-22.6 22.6L58.6 322.9c-10.4 10.4-18 23.3-22.2 37.4L1 480.7c-2.5 8.4-.2 17.5 6.1 23.7s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L387.7 253.7 410.3 231zM160 399.4l-9.1 22.7c-4 3.1-8.5 5.4-13.3 6.9L59.4 452l23-78.1c1.4-4.9 3.8-9.4 6.9-13.3l22.7-9.1v32c0 8.8 7.2 16 16 16h32zM362.7 18.7L348.3 33.2 325.7 55.8 314.3 67.1l33.9 33.9 62.1 62.1 33.9 33.9 11.3-11.3 22.6-22.6 14.5-14.5c25-25 25-65.5 0-90.5L453.3 18.7c-25-25-65.5-25-90.5 0zm-47.4 168l-144 144c-6.2 6.2-16.4 6.2-22.6 0s-6.2-16.4 0-22.6l144-144c6.2-6.2 16.4-6.2 22.6 0s6.2 16.4 0 22.6z"
-                          />
-                        </svg>
-                      </a>
-                    </div>
-                  </td>
+
                   <td class="px-4 py-4">
                     <div class="flex items-center gap-3 justify-center">
                       <div class="bg-[#04D900] w-2.5 h-2.5 rounded-full"></div>

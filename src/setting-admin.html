@@ -51,7 +51,7 @@
           <h1 class="text-2xl font-bold text-center leading-[22px]">
             MANAGEMENT KARYAWAN
           </h1>
-          <h2 class="text-lg font-normal text-center">
+          <h2 class="md:text-lg text-md font-normal text-center">
             PT. PERSADA DATA<br />
             MULTIMEDIA
           </h2>
@@ -175,7 +175,9 @@
       </div>
 
       <div class="flex-1 flex flex-col overflow-hidden">
-        <header class="flex items-center justify-between px-14 py-3 bg-white">
+        <header
+          class="flex items-center justify-between px-7 py-[13.2px] bg-white"
+        >
           <div class="flex items-center">
             <button
               @click="sidebarOpen = true"
@@ -229,14 +231,12 @@
             id="dropdownHoverButton"
             data-dropdown-toggle="dropdownHover"
             data-dropdown-trigger="hover"
-            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-md text-sm px-5 py-2 text-center inline-flex items-center"
+            class="text-gray-900 border border-black hover:bg-gray-200 focus:ring-4 focus:outline-none font-medium rounded-lg text-sm md:px-5 px-3 py-2 text-center inline-flex items-center"
             type="button"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="me-2"
-              height="17"
-              width="17  "
+              class="md:me-2 md:w-3 w-0"
               viewBox="0 0 448 512"
             >
               <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
@@ -249,9 +249,7 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4" />
               </svg> -->
             <svg
-              class="mb-1 ms-2 d-block"
-              height="18"
-              width="18"
+              class="mb-1 ms-2 h-3 d-block"
               aria-hidden="true"
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 320 512"
@@ -266,17 +264,17 @@
           <!-- Dropdown menu -->
           <div
             id="dropdownHover"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-64"
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-52"
           >
             <ul
-              class="font-medium text-md text-gray-700"
+              class="font-medium md:text-md text-sm text-gray-700"
               aria-labelledby="dropdownHoverButton"
             >
               <li
-                class="flex items-center px-4 border-b-2 mx-5 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 px-4 mx-4 py-1 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -287,11 +285,12 @@
                 </svg>
                 <a href="profile-admin.html" class="block px-4 py-2">Profile</a>
               </li>
+
               <li
-                class="flex items-center py-1 px-4 border-b-2 mx-5 hover:bg-gray-200 hover:mx-0 hover:ps-9 hover:rounded-lg"
+                class="flex items-center pl-5 py-1 px-4 border-b-2 mx-0 bg-gray-200 ps-9 hover:rounded-lg"
               >
                 <svg
-                  class="w-8 h-8"
+                  class="md:w-8 md:h-8 h-7 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 26 26"
                 >
@@ -365,10 +364,10 @@
                 >
               </li>
               <li
-                class="flex items-center py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
+                class="flex items-center pl-4 py-1 px-4 mx-4 hover:bg-gray-200 hover:mx-0 hover:ps-8 hover:rounded-lg"
               >
                 <svg
-                  class="w-10 h-10"
+                  class="md:w-10 md:h-10 h-8 md:ps-0 ps-0.5 md:-ml-0 -ml-2"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 24 24"
                 >
@@ -420,26 +419,26 @@
         </header>
 
         <main
-          class="flex-1 overflow-x-hidden overflow-y-auto p-10 bg-gray-200 relative"
+          class="flex-1 overflow-x-hidden overflow-y-auto md:p-10 p-4 bg-gray-200 relative"
         >
           <div
-            class="absolute bg-[#96C3ED] w-[110px] h-[110px] rounded-full right-1/2"
+            class="absolute bg-[#96C3ED] w-[110px] h-[110px] rounded-full right-1/2 xl:mt-0 mt-20"
           ></div>
           <div
-            class="absolute bg-[#35AFE1] w-[85px] h-[85px] rounded-full right-2 bottom-1/3 translate-y-56"
+            class="absolute bg-[#35AFE1] w-[85px] h-[85px] rounded-full right-2 lg:bottom-1/3 bottom-2/3 md:translate-y-56 translate-y-36"
           ></div>
           <div
-            class="absolute bg-main w-[140px] h-[140px] right-1/3 rounded-full -translate-x-10 bottom-0 translate-y-56"
+            class="absolute bg-main w-[140px] h-[140px] right-1/3 rounded-full -translate-x-10 bottom-0 md:translate-y-56 -translate-y-9"
           ></div>
           <div class="relative">
             <h2
-              class="flex px-2 rounded-sm font-inter border-l-4 border-main font-bold items-center text-main text-lg z-50"
+              class="flex md:px-2 px-1 md:ml-0 ml-6 mt-[23px] md:mt-0 md:mb-0 mb-10 rounded-sm font-inter border-l-4 border-main font-bold items-center text-main text-lg z-50"
             >
               <div
-                class="bg-white h-10 w-10 me-5 rounded-full flex justify-center items-center"
+                class="bg-white md:h-10 md:w-10 md:me-5 me-3 rounded-full flex justify-center items-center"
               >
                 <svg
-                  class="fill-main w-5 h-5"
+                  class="fill-main md:w-5 md:h-5"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 512 512"
                 >
@@ -450,27 +449,29 @@
               </div>
               Pengaturan
             </h2>
-            <section class="flex gap-6 my-5">
+            <section class="xl:flex gap-6 my-5">
               <div class="flex flex-col w-full gap-6">
                 <div
                   class="backdrop-blur w-full border border-[#515151] rounded-2xl p-3"
                 >
-                  <h2 class="text-main font-bold text-lg mb-2">Absensi</h2>
-                  <div class="flex gap-4">
+                  <h2 class="text-main font-bold text-lg mb-2 ml-1 md:ml-0">
+                    Absensi
+                  </h2>
+                  <div class="flex md:gap-4 gap-2">
                     <div
                       class="bg-[#96C3ED] w-full font-bold p-3 rounded-xl flex flex-col justify-center items-center"
                     >
-                      <h1 class="text-white text-7xl">20</h1>
-                      <p class="text-white">Sudah Absen</p>
+                      <h1 class="text-white md:text-7xl text-6xl">20</h1>
+                      <p class="text-white md:text-md text-sm">Sudah Absen</p>
                     </div>
                     <div
                       class="bg-[#009DDE] w-full font-bold p-3 rounded-xl flex flex-col justify-center items-center"
                     >
-                      <h1 class="text-white text-7xl">15</h1>
-                      <p class="text-white">Belum Absen</p>
+                      <h1 class="text-white md:text-7xl text-6xl">15</h1>
+                      <p class="text-white md:text-md text-sm">Belum Absen</p>
                     </div>
                     <div
-                      class="bg-main w-full font-bold p-3 rounded-xl flex flex-col justify-center items-center"
+                      class="bg-main w-full font-bold sm:p-3 p-2 rounded-xl flex flex-col justify-center items-center"
                     >
                       <div
                         class="radial-progress text-white"
@@ -479,27 +480,43 @@
                       >
                         80%
                       </div>
-                      <p class="text-white">Complete</p>
+                      <p class="text-white md:text-md text-sm mt-2">Complete</p>
                     </div>
                   </div>
                 </div>
+
                 <div
-                  class="backdrop-blur w-full border border-[#515151] rounded-2xl p-3"
+                  class="backdrop-blur w-full border border-[#515151] rounded-2xl"
                 >
-                  <canvas id="chart" class="w-full"></canvas>
+                  <div
+                    class="bg-none text-gray-900 rounded-xl shadow-xl py-5 px-5 w-full"
+                    x-data="{chartData:chartData()}"
+                    x-init="chartData.fetch()"
+                  >
+                    <canvas id="chart" class="w-full h-32"></canvas>
+                  </div>
                 </div>
               </div>
               <div
-                class="backdrop-blur-lg flex flex-col w-full border border-[#515151] rounded-2xl p-3"
+                class="backdrop-blur-lg w-full md:mt-0 mt-6 border border-[#515151] rounded-2xl p-3"
               >
                 <div
                   class="bg-white w-full flex flex-col gap-2 py-6 px-4 mb-5 rounded-xl"
                 >
                   <h1
-                    class="text-main flex justify-center items-end font-extrabold text-8xl"
+                    class="text-main flex justify-center items-end md:font-extrabold font-bold md:text-8xl text-7xl"
                   >
-                    08:30 <span class="text-4xl">WIB</span>
+                    08:30 <span class="md:text-4xl text-3xl">WIB</span>
                   </h1>
+                  <!-- <div class="backdrop-blur w-full border border-[#515151] rounded-2xl p-3">
+                  <div x-data="{chartData:chartData()}" x-init="chartData.fetch()">
+                    <canvas id="chart" class="w-full"></canvas>
+                  </div>
+                </div>
+              </div>
+              <div class="backdrop-blur-lg flex flex-col w-full border border-[#515151] rounded-2xl p-3">
+                <div class="bg-white w-full flex flex-col gap-2 py-6 px-4 mb-5 rounded-xl">
+                  <h1 class="text-main flex justify-center items-end font-bold text-8xl">08:30 <span class="text-4xl">WIB</span></h1> -->
                   <div class="flex flex-col justify-start">
                     <h3 class="text-main text-lg font-bold">
                       Kabupaten Lamongan
@@ -942,6 +959,15 @@
     <!-- <script src="../node_modules/flowbite/dist/flowbite.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- grafik -->
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.js"
+      defer
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      defer
+    ></script>
     <script>
       Number.prototype.comma_formatter = function () {
         return this.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
@@ -1012,9 +1038,9 @@
                 datasets: [
                   {
                     label: "Income",
-                    backgroundColor: "rgb(16, 97, 204, 0.25)",
-                    borderColor: "rgb(16, 97, 204, 1)",
-                    pointBackgroundColor: "rgb(16, 97, 204, 1)",
+                    backgroundColor: "rgba(102, 126, 234, 0.25)",
+                    borderColor: "rgba(102, 126, 234, 1)",
+                    pointBackgroundColor: "rgba(102, 126, 234, 1)",
                     data: this.data[this.date].data.income,
                   },
                   {
